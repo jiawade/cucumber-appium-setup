@@ -16,7 +16,7 @@ public abstract class BaseTest {
     public static AppiumDriver driver;
 
 
-    protected void setDriver(AppiumDriver driver,AppiumServer server) {
+    protected void setDriver(AppiumDriver driver, AppiumServer server) {
         BaseTest.server = server;
         BaseTest.driver = driver;
     }

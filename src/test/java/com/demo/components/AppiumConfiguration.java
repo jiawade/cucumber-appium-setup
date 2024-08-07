@@ -52,6 +52,9 @@ public class AppiumConfiguration extends BaseTest {
     @Value("${android.platform.version}")
     private String androidPlatformVersion;
 
+    @Value("${appium.noReset}")
+    private Boolean noReset;
+
     private AppiumDriver driver;
 
     public AppiumConfiguration(){
@@ -81,7 +84,7 @@ public class AppiumConfiguration extends BaseTest {
                 .setAppPackage(androidPackage)
                 .setAppActivity(androidActivity)
                 .setAutoGrantPermissions(true)
-                .setNoReset(false);
+                .setNoReset(noReset);
         driver = new AndroidDriver(service.getUrl(), uiAutomator2Options);
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWaitTime));
         return driver;
@@ -98,7 +101,7 @@ public class AppiumConfiguration extends BaseTest {
                 .setApp(iOSApp)
                 .setOrientation(ScreenOrientation.PORTRAIT)
                 .setNewCommandTimeout(Duration.ofSeconds(30))
-                .setNoReset(false);
+                .setNoReset(noReset);
         driver = new IOSDriver(service.getUrl(), xcuiTestOptions);
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWaitTime));
         return driver;

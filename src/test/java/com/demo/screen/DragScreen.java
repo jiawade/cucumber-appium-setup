@@ -19,7 +19,7 @@ public class DragScreen extends AbstractScreen {
     private final By drop1 = AppiumBy.accessibilityId("drop-l2");
 
     @Autowired
-    public AppActions httpRequests;
+    public AppActions appActions;
 
 
     private final AppActions app;

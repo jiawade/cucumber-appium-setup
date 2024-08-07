@@ -33,9 +33,9 @@ public class AppActions {
     }
 
     public void hideKeyboard() {
-        if (driver instanceof IOSDriver) {
+        if (this.isIOS()) {
             ((IOSDriver) driver).hideKeyboard();
-        } else if (driver instanceof AndroidDriver) {
+        } else if (this.isAndroid()) {
             ((AndroidDriver) driver).hideKeyboard();
         }
     }
@@ -139,6 +139,14 @@ public class AppActions {
     public String getAttribute(By by, String attribute) {
         waitExist(by);
         return driver.findElement(by).getAttribute(attribute);
+    }
+
+    public boolean isIOS(){
+        return driver instanceof IOSDriver;
+    }
+
+    public boolean isAndroid() {
+        return driver instanceof AndroidDriver;
     }
 
 

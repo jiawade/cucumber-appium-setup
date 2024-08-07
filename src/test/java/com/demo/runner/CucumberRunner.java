@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         tags = "@data",
-        glue = {"com.demo.steps","com.demo.init"},
+        glue = {"com.demo.steps","com.demo.init","com.demo.screen"},
         plugin = {
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "pretty",

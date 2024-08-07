@@ -23,22 +23,16 @@ public class AppiumServer {
 
     public AppiumDriverLocalService startServer(String platform) {
         final AppiumServiceBuilder builder = new AppiumServiceBuilder();
+        builder.withIPAddress(appServerHost)
+                .usingPort(appServerPort)
+                .withArgument(BASEPATH,"/")
+                .withArgument(SESSION_OVERRIDE)
+                .withArgument(LOG_LEVEL, "error")
+                .withArgument(ALLOW_INSECURE, "chromedriver_autodownload");
         if (platform.equalsIgnoreCase("android")) {
-            builder.withIPAddress(appServerHost)
-                    .usingPort(appServerPort)
-                    .withArgument(BASEPATH,"/")
-                    .withArgument(SESSION_OVERRIDE)
-                    .withArgument(LOG_LEVEL, "error")
-                    .withArgument(USE_DRIVERS, "uiautomator2")
-                    .withArgument(ALLOW_INSECURE, "chromedriver_autodownload");
+                    builder.withArgument(USE_DRIVERS, "uiautomator2");
         } else if (platform.equalsIgnoreCase("ios")) {
-            builder.withIPAddress(appServerHost)
-                    .usingPort(appServerPort)
-                    .withArgument(BASEPATH,"/")
-                    .withArgument(SESSION_OVERRIDE)
-                    .withArgument(LOG_LEVEL, "error")
-                    .withArgument(USE_DRIVERS, "xcuitest")
-                    .withArgument(ALLOW_INSECURE, "chromedriver_autodownload");
+            builder.withArgument(USE_DRIVERS, "xcuitest");
         }else {
             throw new UnsupportedPlatformException("Unsupported platfrom: "+platform);
         }
