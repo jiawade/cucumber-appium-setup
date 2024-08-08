@@ -19,8 +19,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @Slf4j
 @CucumberContextConfiguration
-@SpringBootTest(classes = {AppiumConfiguration.class,
-        MainScreen.class, LoginScreen.class, SignUpScreen.class, DragScreen.class})
+@SpringBootTest(classes = AppiumConfiguration.class)
 public class Hook extends BaseTest {
 
     public Hook(AppiumDriver driver, AppiumServer server) {

@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Scope;
 import java.time.Duration;
 
 @Configuration
-@ComponentScan
+@ComponentScan(basePackages = "com.demo")
 public class AppiumConfiguration extends BaseTest {
 
     @Value("${platform}")
