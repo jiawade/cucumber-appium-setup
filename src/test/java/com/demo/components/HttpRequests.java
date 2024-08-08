@@ -3,13 +3,13 @@ package com.demo.components;
 import com.github.kevinsawicki.http.HttpRequest;
 import io.github.jiawade.tool.utils.GsonUtils;
 import lombok.Getter;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 
 @Component
+//@Scope for not singleton use
 public class HttpRequests {
     private String host;
     private int port;

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Scope for not singleton use
 public class DragScreen extends AbstractScreen {
     @AndroidFindBy(accessibility = "drag-l2")
     @iOSXCUITFindBy(accessibility = "drag-l2")

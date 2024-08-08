@@ -1,10 +1,7 @@
 package com.demo.init;
 
 import com.demo.components.AppiumServer;
-import com.demo.exception.UnsupportedPlatformException;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
 import io.cucumber.java.Scenario;
 
 public abstract class BaseTest {

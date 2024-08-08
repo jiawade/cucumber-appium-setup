@@ -6,7 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AbstractScreen {
 
-
     public AbstractScreen(AppiumDriver driver){
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }

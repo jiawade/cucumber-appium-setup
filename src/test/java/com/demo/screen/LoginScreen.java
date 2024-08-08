@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Scope for not singleton use
 public class LoginScreen extends AbstractScreen {
     @AndroidFindBy(accessibility = "input-email")
     @iOSXCUITFindBy(accessibility = "input-email")
